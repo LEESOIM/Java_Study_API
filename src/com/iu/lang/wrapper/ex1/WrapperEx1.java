@@ -23,6 +23,7 @@ public class WrapperEx1 {
 		int genderInt = Integer.parseInt(gender);
 		int monthInt = Integer.parseInt(month);
 		
+		
 		if(genderInt == 1 || genderInt == 3) {
 			System.out.println("남자 🧑");
 			age(jumin);
@@ -33,14 +34,15 @@ public class WrapperEx1 {
 			System.out.println("잘못 입력 하셨습니다.");
 		}
 		
+		
 		if(2<monthInt && monthInt<6) {
-			System.out.println("봄");
+			System.out.println("3~5월 : 봄");
 		} else if(5<monthInt && monthInt<9) {
-			System.out.println("여름");
+			System.out.println("6~8월 : 여름");
 		} else if(8<monthInt && monthInt<12) {
-			System.out.println("가을");
+			System.out.println("9월~11월 : 가을");
 		} else if(monthInt==12||monthInt==1||monthInt==2) {
-			System.out.println("겨울");
+			System.out.println("12월~2월 : 겨울");
 		} else {
 			System.out.println("잘못 입력 하셨습니다.");
 		}
@@ -75,5 +77,6 @@ public class WrapperEx1 {
 //			System.out.println("여자 👩");
 //		}
 //	}
+	
 	
 }

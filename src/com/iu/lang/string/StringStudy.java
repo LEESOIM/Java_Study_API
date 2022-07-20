@@ -21,8 +21,10 @@ public class StringStudy {
 			System.out.println(c);
 		}
 		
-				
-
+		
+		
+		// 1. substring() : String
+		// 2. charAt()	  : char
 		
 	}
 }

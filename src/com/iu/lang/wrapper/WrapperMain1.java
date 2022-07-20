@@ -24,16 +24,16 @@ public class WrapperMain1 {
 		n = 50;
 		integer = new Integer(n); 
 		
-		integer = n; //auto-boxing : 정수값 int를 레퍼런스(참조)타입으로 바꿔줌
-		n = integer; //auto-unboxing : reference -> primitive 
+		integer = n; //auto-boxing : 정수값 int를 레퍼런스(참조)타입으로 자동으로 바꿔줌
+		n = integer; //auto-unboxing : 자동으로 reference -> primitive 
 		System.out.println("-------------");
 
 		
-		long l = 10L;
-		Long ll = l;
+		long l = 10L; //프리미티브 타입을 담고있다
+		Long ll = l; //레퍼런스타입(주소값)을 담고있다
 		
 		integer = (int)l; //같은 프리미티브타입끼리만 형변환 가능
-//		integer = (int)ll; //레퍼런스에서 프리미티브로 형변환 불가능
+//		integer = (int)ll; //레퍼런스(주소값)에서 프리미티브로 형변환 불가능
 
 		
 		

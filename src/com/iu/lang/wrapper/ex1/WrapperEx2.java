@@ -45,12 +45,24 @@ public class WrapperEx2 {
 				System.out.println(">>확인 완료");
 				break;
 			}else if(sum > 9) {
-				sum %= 10;
+					sum %= 10;
 			}else {
-				System.out.println(">>잘못된 입력");
-				break;
+					System.out.println(">>잘못된 입력");
+					break;
 			}
+	
 		}
+		
+		
+//1. substring() : String
+//		String num = jumin.substring(i, i+1);
+//		int n = Integer.parseInt(num);
+//2. charAt() 	 : char
+//		char ch = jumin.charAt(0);			(1)
+//		int n = Integer.parseInt(ch+"");	
+//		String num = String.valueOf(ch);	(2)
+//		int n = Integer.parseInt(num);
+//		int n = Integer.parseInt(String.valueOf(jumin.charAt(0))); //(3)
+		
 	}
-
 }
