@@ -30,7 +30,7 @@ public class WeatherController {
 		
 		while(check) {
 			
-			System.out.println("\n1. 날씨정보");
+			System.out.println("1. 날씨정보 초기화");
 			System.out.println("2. 전국날씨 출력");
 			System.out.println("3. 지역날씨 검색");
 			System.out.println("4. 지역정보 추가");
@@ -41,27 +41,30 @@ public class WeatherController {
 			
 			if(num==1) {
 				
-				System.out.println(">> 날씨정보초기화");
+				System.out.println(">> 셋팅 완료\n");
 				ws.init(ar);
 				
 			}else if(num==2) {
 				
-				System.out.println(">> 날씨출력");
+				System.out.println(">> 전국날씨\n");
 				wv.view(ar);
 			
 			}else if(num==3) {
+				
+				
+				CityDTO cityDTO = new CityDTO();
 				ws.find(ar);
-				wv.view(ar);
+				wv.view(cityDTO);
 				
 			}else if(num==4) {
 				
 				ws.add(ar);
-				wv.view(">> 추가완료");
+				wv.view(">> 추가완료\n");
 				
 			}else if(num==5) {
 				
 				ws.remove(ar);
-				wv.view(">> 삭제완료");
+				wv.view(">> 삭제완료\n");
 				
 			}else {
 				System.out.println(">> 종료");

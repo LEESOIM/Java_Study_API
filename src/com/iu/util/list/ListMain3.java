@@ -12,9 +12,11 @@ public class ListMain3 {
 		WorkerDTO workerDTO2 = new WorkerDTO();
 		
 		ArrayList<WorkerDTO> ar = new ArrayList<>();
+				//데이터타입을 보장				//생략가능
 		
 		ar.add(workerDTO);
 		ar.add(workerDTO2);
+
 	}
 
 }

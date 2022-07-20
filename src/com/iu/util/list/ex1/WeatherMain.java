@@ -1,7 +1,5 @@
 package com.iu.util.list.ex1;
 
-import java.util.ArrayList;
-
 public class WeatherMain {
 
 	public static void main(String[] args) {
@@ -18,8 +16,7 @@ public class WeatherMain {
 		wc.start();
 		
 		
-		
-		
+//		----------------------------------------------------------		
 //		CityDTO cityDTO = new CityDTO();
 //		cityDTO.setName("d");
 //		cityDTO.setGion(3);
@@ -32,7 +29,7 @@ public class WeatherMain {
 //		cityDTO2.setHum(3333);
 //		cityDTO2.setStatus("비dd");
 //		
-//		ar.add(cityDTO); //인덱스번호에 추가하는것이 아닌 add로 추가
+//		ar.add(cityDTO); //인덱스번호에 추가(=배열)하는것이 아닌 add로 추가
 //		ar.add(cityDTO2);
 		
 	}

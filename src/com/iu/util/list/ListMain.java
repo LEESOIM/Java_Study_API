@@ -8,6 +8,8 @@ public class ListMain {
 		// 1,2,3
 		int [] nums = new int [3];
 		nums[0]=1;
+		nums[1]=2;
+		nums[2]=3;
 		
 //		1. List -> ArrayList
 //			- 순서가 유지
@@ -15,8 +17,9 @@ public class ListMain {
 //			- 배열 기반(index 사용)
 		
 		ArrayList ar = new ArrayList(); 
-		ar.add(1); //object타입만 들어가는데 프리미티브타입이 들어가는 이유
-					//정수값 int를 Integer로 자동으로 바꿔줌 -> auto-boxing 
+		//object타입만 들어가는데 프리미티브타입이 들어가는 이유
+		//정수값 int타입이 자동으로 Integer로 바뀌면서 들어감 -> auto-boxing 
+		ar.add(1);
 		ar.add(2);
 		ar.add(3);
 		ar.add(4);
@@ -33,7 +36,7 @@ public class ListMain {
 		listview.view(ar);
 		
 		// set - 특정 인덱스 번호의 요소를 수정
-		ar.set(1, 'c'); //-> auto-boxing되어서 Character로 자동으로 바뀐다
+		ar.set(1, 'c'); //-> auto-boxing되어서 Character로 자동으로 바껴서 들어감
 		listview.view(ar);
 		
 		// clear - 모든 요소를 삭제

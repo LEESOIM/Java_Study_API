@@ -8,6 +8,7 @@ public class WeatherService {
 	
 	private StringBuffer sb;
 	private Scanner sc;
+
 	
 	public WeatherService() {
 		sc = new Scanner(System.in);
@@ -43,13 +44,13 @@ public class WeatherService {
 	public void add(ArrayList<CityDTO> ar) {
 		
 		CityDTO cityDTO = new CityDTO();
-		System.out.println("도시명 입력");
+		System.out.println(">>도시명 입력");
 		cityDTO.setName(sc.next());
-		System.out.println("온도 입력");
+		System.out.println(">>온도 입력");
 		cityDTO.setGion(sc.nextDouble());
-		System.out.println("습도 입력");
+		System.out.println(">>습도 입력");
 		cityDTO.setHum(sc.nextInt());
-		System.out.println("날씨 입력");
+		System.out.println(">>날씨 입력");
 		cityDTO.setStatus(sc.next());
 		
 		ar.add(cityDTO);//위 데이터를 매개변수로 받아온 ar주소에 추가
@@ -60,11 +61,11 @@ public class WeatherService {
 	//remove메서드
 	//도시명을 입력받아서 리스트에서 삭제
 	public void remove(ArrayList<CityDTO> ar) {
-		System.out.println("삭제할 도시명 입력");
+		System.out.println(">>삭제할 도시명 입력");
 		String name = sc.next();
 		
 		for(int i=0; i<ar.size(); i++) {
-			if(name.equals(ar.get(i).getName())) {
+			if(name.equals(ar.get(i).getName())) { 
 				ar.remove(i);
 				break;
 			}
@@ -75,21 +76,20 @@ public class WeatherService {
 	//find메서드
 	//도시명을 입력받아서 리스트에서 검색해서 리턴
 	public void find(ArrayList<CityDTO> ar) {
-		System.out.println("검색할 도시명 입력");
+		System.out.println(">>검색할 도시명 입력");
 		String name = sc.next();
-		CityDTO cityDTO = new CityDTO();
 		
 		for(int i=0; i<ar.size(); i++) {
 			if(name.equals(ar.get(i).getName())) {
-				cityDTO.setName(ar.get(i).getName());
-				cityDTO.setGion(ar.get(i).getGion());
-				cityDTO.setHum(ar.get(i).getHum());
-				cityDTO.setStatus(ar.get(i).getStatus());
 				
-				ar.add(cityDTO);
+				//get(index) : index번호의 요소를 리턴
+//				ar.get(i).getName();
+//				ar.get(i).getGion();
+//				ar.get(i).getHum();
+//				ar.get(i).getStatus();
+				
 			}
-		}
-		
+		} 
 	}
-
+	
 }
