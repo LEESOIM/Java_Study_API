@@ -35,6 +35,7 @@ public class ListMain2 {
 				//데이터타입을 보장				//생략가능
 		
 //		String n1 = ar.get(0); //위 (String)을 안써줘도됨!
+		
 
 		System.out.println(ar.get(0) instanceof String); //true
 		System.out.println(ar.get(1) instanceof String); //false
