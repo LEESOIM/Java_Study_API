@@ -16,6 +16,15 @@ public class ListMain3 {
 		
 		ar.add(workerDTO);
 		ar.add(workerDTO2);
+		
+		
+		
+		
+		
+//		ArrayList<String> ar1 = new ArrayList<>();
+//		ArrayList<Integer> ar2 = new ArrayList<>();
+//		ar1 = ar2; -> X
+//		<제네릭>까지 같아야한다
 
 	}
 
