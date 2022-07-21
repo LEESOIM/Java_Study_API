@@ -14,6 +14,7 @@ public class StringBufferStudy {
 		sb.append(str2); 
 		sb.append(10);
 		String result = sb.toString(); //객체의 주소를 문자열로 반환
+		//StringBuffer타입과 String타입이 다르기 때문에 toString으로 바꿔준다
 		
 		System.out.println(sb);
 		System.out.println(result);

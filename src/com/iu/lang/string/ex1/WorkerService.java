@@ -25,7 +25,7 @@ public class WorkerService {
 		info = info.replace(",", "-");
 		
 		
-// (1) Tokenizer : 잘랐을때 묶음일때	
+// (1) Tokenizer : 잘랐을때 묶음일때 사용하기 편함
 		StringTokenizer st = new StringTokenizer(info,"-"); 
 		WorkerDTO [] workerDTOs = new WorkerDTO[st.countTokens()/4];
 		int index = 0;
@@ -42,7 +42,7 @@ public class WorkerService {
 		}
 		
 		
-// (2) Split : 잘랐을때 독립적일때
+// (2) Split : 잘랐을때 독립적일때 사용하기 편함
 //		String [] infos = info.split("-");
 //		
 //		WorkerDTO [] workerDTOs = new WorkerDTO[infos.length/4];
