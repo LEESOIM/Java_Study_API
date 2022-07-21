@@ -12,7 +12,7 @@ public class WeatherView {
 			//1) ar에서 꺼내오면 기온,습도..등이 아닌 CityDTO타입이 나온다
 			CityDTO cityDTO = ar.get(i); 	
 			//2) CityDTO타입 안에 있는 데이터(기온,습도..등)들을 가져온다
-			this.view(cityDTO); 			
+			this.view(cityDTO); //매개변수가 같은 타입이 있는 view로 이동
 		}
 	}
 	

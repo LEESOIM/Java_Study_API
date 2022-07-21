@@ -20,7 +20,7 @@ public class WeatherService {
 	}
 	
 	
-	//init메서드
+	//init(초기화)메서드
 	//sb에 있는 Data들을 파싱해서 CityDTO에 담아서 리턴(ArrayList)
 	public void init(ArrayList<CityDTO> ar) {
 		String data = sb.toString(); //객체의 주소값들을 문자열로 반환
@@ -29,19 +29,20 @@ public class WeatherService {
 		StringTokenizer st = new StringTokenizer(data, "-");
 		
 		while(st.hasMoreTokens()) {
-			CityDTO cityDTO = new CityDTO();
+			CityDTO cityDTO = new CityDTO(); 
 			cityDTO.setName(st.nextToken());
 			cityDTO.setGion(Double.parseDouble(st.nextToken()));
 			cityDTO.setHum(Integer.parseInt(st.nextToken()));
 			cityDTO.setStatus(st.nextToken());
-			ar.add(cityDTO);
+			
+			ar.add(cityDTO); 
 		}
 	}
 	
 
 	//add메서드
 	//city 정보를 입력받아서 추가
-	public void add(ArrayList<CityDTO> ar) {
+	public boolean add(ArrayList<CityDTO> ar) {
 		
 		CityDTO cityDTO = new CityDTO();
 		System.out.println(">>도시명 입력");
@@ -53,43 +54,51 @@ public class WeatherService {
 		System.out.println(">>날씨 입력");
 		cityDTO.setStatus(sc.next());
 		
-		ar.add(cityDTO);//위 데이터를 매개변수로 받아온 ar주소에 추가
+		return ar.add(cityDTO);//위 데이터를 매개변수로 받아온 ArrayList주소에 추가
 	}
 	
 	
 		
 	//remove메서드
 	//도시명을 입력받아서 리스트에서 삭제
-	public void remove(ArrayList<CityDTO> ar) {
+	public boolean remove(ArrayList<CityDTO> ar) {
 		System.out.println(">>삭제할 도시명 입력");
-		String name = sc.next();
+		String name = sc.next().toUpperCase();
+		boolean r = false;
 		
 		for(int i=0; i<ar.size(); i++) {
-			if(name.equals(ar.get(i).getName())) { 
+			if(name.equals(ar.get(i).getName().toUpperCase())) { 
 				ar.remove(i);
+				r = !r; 
 				break;
 			}
 		}
+		return r;
+		
+//		for(CityDTO cityDTO: ar) {//ar에서 하나 꺼내서 cityDTO에 담는다
+//			if(name.equals(cityDTO.getName())) { 
+//				ar.remove(cityDTO); //향샹된for문은 인덱스번호를 사용할수없기때문에 주소값이 들어있는 참조변수로 삭제시켜줌
+//				break;
+//			}
+//		}
 	}
+
 	
 	
 	//find메서드
 	//도시명을 입력받아서 리스트에서 검색해서 리턴
-	public void find(ArrayList<CityDTO> ar) {
+	public CityDTO find(ArrayList<CityDTO> ar) {
+		CityDTO cityDTO = null;
 		System.out.println(">>검색할 도시명 입력");
-		String name = sc.next();
-		
-		for(int i=0; i<ar.size(); i++) {
-			if(name.equals(ar.get(i).getName())) {
-				
-				//get(index) : index번호의 요소를 리턴
-//				ar.get(i).getName();
-//				ar.get(i).getGion();
-//				ar.get(i).getHum();
-//				ar.get(i).getStatus();
-				
+		String name = sc.next().toLowerCase();
+
+		for(CityDTO cityDTO2: ar) { //ar에서 하나 꺼내서 cityDTO2에 담는다
+			if(name.equals(cityDTO2.getName().toLowerCase())) {
+				cityDTO = cityDTO2;
+				break;
 			}
-		} 
+		}
+		return cityDTO; 
 	}
 	
 }
