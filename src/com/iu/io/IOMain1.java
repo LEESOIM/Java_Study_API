@@ -16,10 +16,10 @@ public class IOMain1 {
 		
 		BufferedReader br = new BufferedReader(ir); //처리한 글자를 버퍼에 모아놓는다
 		
+		System.out.println("키보드에서 입력 후 엔터");
+		String msg = "";
 		try {
-			System.out.println("키보드에서 입력 후 엔터");
-			String msg = br.readLine();
-			System.out.println(msg); //한줄 읽어오소
+			msg = br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
