@@ -66,9 +66,9 @@ public class WeatherController {
 				
 			}else if(num==5) {//5. 지역정보 삭제
 				
-				boolean result2 = ws.remove(ar);
+				boolean result = ws.remove(ar);
 				String message = ">> 삭제실패";
-				if(result2) {
+				if(result) {
 					message = ">> 삭제완료";
 				}
 				wv.view(message);

@@ -23,6 +23,6 @@ public interface Service {
 	
 	
 	//데이터를 입력 받아서 학생 한명을 추가
-	public int setStudentAdd(ArrayList<StudentDTO> ar) throws Exception;
+	public void setStudentAdd(ArrayList<StudentDTO> ar) throws Exception;
 	
 }

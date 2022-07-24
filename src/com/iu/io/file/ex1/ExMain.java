@@ -1,32 +1,33 @@
 package com.iu.io.file.ex1;
 
-import java.util.ArrayList;
-
 
 public class ExMain {
 
 	public static void main(String[] args) throws Exception {
 
-		StudentDAO dao = new StudentDAO();
-		ArrayList<StudentDTO> ar = null;
-		try {
-			ar = dao.getList();
-			for(StudentDTO dto : ar) {
-				System.out.println("이름 : "+dto.getName());
-				System.out.println("번호 : "+dto.getNum());
-				System.out.println("국어 : "+dto.getKor());
-				System.out.println("영어 : "+dto.getEng());
-				System.out.println("수학 : "+dto.getMath());
-				System.out.println("-----------");
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		StudentDAO dao = new StudentDAO();
+//		StudentService ss = new StudentService();
+//		ArrayList<StudentDTO> ar = null;
 		
-		System.out.println(ar);
+//		try {
+//			ar = dao.getList();
+//			for(StudentDTO dto : ar) {
+//				System.out.println("이름 : "+dto.getName());
+//				System.out.println("번호 : "+dto.getNum());
+//				System.out.println("국어 : "+dto.getKor());
+//				System.out.println("영어 : "+dto.getEng());
+//				System.out.println("수학 : "+dto.getMath());
+//				System.out.println("-----------");
+//			}
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
-		//dao.setList(ar);
+		StudentController sc = new StudentController();
+		sc.start();
+		
+		
 		
 	}
 }

@@ -14,7 +14,7 @@ public class StudentView {
 	//2. StudentDTO 출력
 	public void view(StudentDTO dto) {
 		System.out.println("Name\tNum\t국어\t영어\t수학\tTotal\tAvg");
-		System.out.print(dto.getName()+"\t"+dto.getNum()+"\t"+dto.getKor()+"\t"+dto.getEng()+"\t"+dto.getMath()+"\t"+dto.getTotal()+"\t"+dto.getAvg());
+		System.out.println(dto.getName()+"\t"+dto.getNum()+"\t"+dto.getKor()+"\t"+dto.getEng()+"\t"+dto.getMath()+"\t"+dto.getTotal()+"\t"+dto.getAvg());
 	}
 	
 	

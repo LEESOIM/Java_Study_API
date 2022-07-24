@@ -41,7 +41,7 @@ public class StudentDAO {
 			dto.setKor(Integer.parseInt(st.nextToken().trim()));
 			dto.setEng(Integer.parseInt(st.nextToken().trim()));
 			dto.setMath(Integer.parseInt(st.nextToken().trim()));
-				
+				  
 			ar.add(dto);
 		}
 		return ar;
