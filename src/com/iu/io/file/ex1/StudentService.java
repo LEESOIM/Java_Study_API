@@ -7,11 +7,11 @@ public class StudentService implements Service {
 	
 //	*get/set메서드를 호출하기 위해서는 Service클래스안에 DAO객체가 만들어져있어야한다
 	private Scanner sc;
-	private StudentDAO dao; //1변수만 선언한것(null값이 들어가있음)
+	private StudentDAO dao; //1)변수만 선언한것(null값이 들어가있음)
 	
 	public StudentService() {
-		sc = new Scanner(System.in);
-		this.dao = new StudentDAO(); //2객체를 생성 해줘야함!
+		this.sc = new Scanner(System.in);
+		this.dao = new StudentDAO(); //2)객체를 생성 해줘야함!
 	}
 
 	

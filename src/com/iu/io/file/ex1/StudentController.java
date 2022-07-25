@@ -61,12 +61,13 @@ public class StudentController {
 				
 				
 			} else if(select==5) {
-				int result=0;
+				int result = ss.setList(ar);
 				if(result==1) {
-					ss.setList(ar);
 					sv.view(">> 백업성공");
+					sv.veiw(ar);
+				}else {
+					sv.view(">> 백업실패");
 				}
-				sv.view(">> 백업실패");
 				
 			} else {
 				sv.view(">> 프로그램종료");
