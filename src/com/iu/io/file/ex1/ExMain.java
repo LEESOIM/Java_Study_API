@@ -27,7 +27,5 @@ public class ExMain {
 		StudentController sc = new StudentController();
 		sc.start();
 		
-		
-		
 	}
 }

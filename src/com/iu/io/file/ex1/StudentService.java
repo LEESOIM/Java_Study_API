@@ -7,21 +7,22 @@ public class StudentService implements Service {
 	
 //	*get/set메서드를 호출하기 위해서는 Service클래스안에 DAO객체가 만들어져있어야한다
 	private Scanner sc;
+	private StudentDAO dao; //1변수만 선언한것(null값이 들어가있음)
+	
 	public StudentService() {
 		sc = new Scanner(System.in);
+		this.dao = new StudentDAO(); //2객체를 생성 해줘야함!
 	}
 
 	
 	//StudentDAO의 getList를 호출하고 총점과 평균을 각각 계산해서 대입하고 그 List를 리턴
 	@Override
 	public ArrayList<StudentDTO> getList() throws Exception {
-		ArrayList<StudentDTO> ar = new ArrayList<>();
-		StudentDAO dao = new StudentDAO();
-		ar = dao.getList();
+		ArrayList<StudentDTO> ar = dao.getList();
 		
-		for(int i=0; i<ar.size(); i++) {
-			ar.get(i).setTotal(ar.get(i).getKor()+ar.get(i).getEng()+ar.get(i).getMath());
-			ar.get(i).setAvg(ar.get(i).getTotal()/3);
+		for(StudentDTO dto : ar) { //인덱스번호가 필요없으니 향상된for문으로 작성
+			dto.setTotal(dto.getKor()+dto.getEng()+dto.getMath());
+			dto.setAvg(dto.getTotal()/3.0);
 		}
 		return ar;
 	}
@@ -30,10 +31,8 @@ public class StudentService implements Service {
 	//StudentDAO의 setList를 호출하고 그 결과를 리턴
 	@Override
 	public int setList(ArrayList<StudentDTO> ar) throws Exception {
-		StudentDAO dao = new StudentDAO();
-		dao.setList(ar);
 		
-		return 1;
+		return dao.setList(ar);
 	}
 
 	
@@ -59,9 +58,9 @@ public class StudentService implements Service {
 	//삭제 성공 1 리턴, 삭제 실패 0 리턴
 	@Override
 	public int setStudentDelete(ArrayList<StudentDTO> ar) throws Exception {
+		int result = 0;
 		System.out.println(">> 삭제할 학생 번호 입력");
 		int num = sc.nextInt();
-		int result = 0;
 		for(StudentDTO dtoDelete : ar) {
 			if(num == dtoDelete.getNum()) {
 				ar.remove(dtoDelete);
@@ -88,7 +87,7 @@ public class StudentService implements Service {
 		System.out.println(">> 수학 점수 입력");
 		dto.setMath(sc.nextInt());
 		dto.setTotal(dto.getKor()+dto.getEng()+dto.getMath());
-		dto.setAvg(dto.getTotal()/3);
+		dto.setAvg(dto.getTotal()/3.0);
 		
 		ar.add(dto);
 	}

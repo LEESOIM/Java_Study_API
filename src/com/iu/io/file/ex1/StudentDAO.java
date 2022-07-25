@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
@@ -57,24 +58,31 @@ public class StudentDAO {
 	//작성 형식은 기존 내용의 형식과 동일하게
 	//1 리턴 : 성공
 	//0 리턴 : 예외발생
-	public int setList(ArrayList<StudentDTO> ar) throws Exception {
+	public int setList(ArrayList<StudentDTO> ar) {
 		
-		File file = new File("c:\\study", "studentData.txt");
-		FileWriter fw = new FileWriter(file);
-		int result = 0;
-		for(int i=0; i<ar.size(); i++) {
-			fw.write(ar.get(i).getName()+"\r\n");
-			fw.write(ar.get(i).getNum()+"\r\n");
-			fw.write(ar.get(i).getKor()+"\r\n");
-			fw.write(ar.get(i).getEng()+"\r\n");
-			fw.write(ar.get(i).getMath()+"\r\n");
-			fw.write(ar.get(i).getTotal()+"\r\n");
-			fw.write(ar.get(i).getAvg()+"\r\n");
+		int result = 1;
+		File file = new File("c:\\study", "studentData.txt"); //어디에저장할거냐
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter(file); //파일에작성할거야
+			fw.write("\r\n");
+			for(StudentDTO dto : ar) {
+				StringBuffer stringBuffer = new StringBuffer();
+				stringBuffer.append(dto.getName()+",");
+				stringBuffer.append(dto.getNum()+",");
+				stringBuffer.append(dto.getKor()+",");
+				stringBuffer.append(dto.getEng()+",");
+				stringBuffer.append(dto.getMath());
+				stringBuffer.append("\r\n");
+				fw.write(stringBuffer.toString());
+			}
 			fw.flush();
-			result = 1;
-		}
-		
+		} catch (IOException e) { //예외발생
+			e.printStackTrace();
+			result = 0;
+		} 
 		return result;
 	}
-
 }
+	
+

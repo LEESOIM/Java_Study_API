@@ -8,9 +8,7 @@ public class StudentDTO {
 	private int eng;
 	private int math;
 	private int total;
-	private int avg;
-	
-	
+	private double avg;
 	public String getName() {
 		return name;
 	}
@@ -47,11 +45,13 @@ public class StudentDTO {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-	public int getAvg() {
+	public double getAvg() {
 		return avg;
 	}
-	public void setAvg(int avg) {
+	public void setAvg(double avg) {
 		this.avg = avg;
 	}
 	
+	
+
 }
