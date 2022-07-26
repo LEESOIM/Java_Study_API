@@ -29,7 +29,7 @@ public class StudentDAO {
 		boolean check=true;
 		
 		while(check) {			
-			String data = br.readLine(); //iu, 1,56,54,85 -> 한줄만불러옴!
+			String data = br.readLine(); //iu, 1,56,54,85 -> 한줄만불러오기때문에 내부에 while문 노필요!
 			if(data==null) {
 				break;
 			}
